@@ -1,16 +1,17 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+//import { NgModule, ErrorHandler } from '@angular/core';
+//import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { MapviewPage } from '../pages/mapview/mapview';
+import { UserviewPage } from '../pages/userview/userview';
+import { ConnectivityService  } from '../providers/connectivity-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
+    MapviewPage,
+    UserviewPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -18,10 +19,9 @@ import { ListPage } from '../pages/list/list';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage
+    MapviewPage,
+    UserviewPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ConnectivityService]
 })
 export class AppModule {}
